@@ -1,0 +1,13 @@
+#animate {
+   animation: animate 5s;
+ }
+ 
+ @keyframes animate {
+   0% {
+     opacity: 0;
+   }
+   100% {
+      opacity: 100;
+   }
+ }
+ 
