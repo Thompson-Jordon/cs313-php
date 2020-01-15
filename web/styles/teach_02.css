@@ -1,0 +1,31 @@
+body {
+   background-color: grey;
+}
+
+.bold:hover {
+   font-weight: bold;
+}
+
+#div1 {
+   background-color: steelblue;
+   font-size: large;
+   color: white;
+   padding: 50px;
+}
+
+#div2 {
+   background-color: rebeccapurple;
+   font-size: medium;
+   color: seashell;
+   padding: 50px;
+}
+
+#div3 {
+   font-size: small;
+   color: whitesmoke;
+   padding: 50px;
+}
+
+.btn {
+   margin: .5rem;
+}
