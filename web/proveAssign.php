@@ -1,4 +1,4 @@
-<?php $thisPage = "Ponder Assignments"; ?>
+<?php $thisPage = "Prove Assignments"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,12 +18,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <title>CS470: Ponder Assignments</title>
+  <title>CS470 | Prove Assignments</title>
 </head>
 
 <body>
+  <h1 class="jumbotron center">CS470 | Prove Assignments</h1>
   <?php include("nav.php"); ?>
-  <h1>this is the ponder assignments page</h1>
   <script src="./scripts/app.js"></script>
 </body>
 
