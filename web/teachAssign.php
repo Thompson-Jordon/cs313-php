@@ -1,4 +1,4 @@
-<?php $thisPage = "Home"; ?>
+<?php $thisPage = "Teach Assignments"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,12 +18,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <title>CS470: Jordon Thompson</title>
+  <title>CS470: Teach Assignments</title>
 </head>
 
 <body>
   <?php include("nav.php"); ?>
-  <h1>This is the home page</h1>
+  <h1>this is the teach assignments page</h1>
   <script src="./scripts/app.js"></script>
 </body>
 
