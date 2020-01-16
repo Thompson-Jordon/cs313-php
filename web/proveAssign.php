@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <h1 class="jumbotron center">CS470 | Prove Assignments</h1>
+  <h1 class="jumbotron">CS470 | Prove Assignments</h1>
   <?php include("nav.php"); ?>
   <script src="./scripts/app.js"></script>
 </body>
