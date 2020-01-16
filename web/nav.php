@@ -1,7 +1,7 @@
 <div id="navigation">
-   <ul>
-      <li <?php if ($thisPage == "Home") echo " id=\"currentpage\""; ?>><a href="index.php">Home</a></li>
-      <li <?php if ($thisPage == "Teach Assignments") echo " id=\"currentpage\""; ?>><a href="teachAssign.php">Teach Assignments</a></li>
-      <li <?php if ($thisPage == "Prove Assignments") echo " id=\"currentpage\""; ?>><a href="proveAssign.php">Prove Assignments</a></li>
+   <ul class="navbar-nav">
+      <li class="nav-item" <?php if ($thisPage == "Home") echo " id=\"currentpage\""; ?>><a class="nav-link" href="index.php">Home</a></li>
+      <li class="nav-item" <?php if ($thisPage == "Teach Assignments") echo " id=\"currentpage\""; ?>><a class="nav-link" href="teachAssign.php">Teach Assignments</a></li>
+      <li class="nav-item" <?php if ($thisPage == "Prove Assignments") echo " id=\"currentpage\""; ?>><a class="nav-link" href="proveAssign.php">Prove Assignments</a></li>
    </ul>
 </div>
