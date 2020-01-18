@@ -22,9 +22,16 @@
 </head>
 
 <body>
-  <h1 class="jumbotron">CS470 | Jordon Thompson</h1>
   <?php include("nav.php"); ?>
+  <h1 class="jumbotron">CS470 | Jordon Thompson</h1>
   <script src="./scripts/app.js"></script>
+  <div class="container-fluid" id="about">
+    <img src="./images/Jordon2018.jpg" alt="Picture of Jordon">
+    <p>Jordon grew up in Utah and still lives there with his wife and children.
+      Jordon is a member of the Church of Jesus Crist of Latter-Day Saints and
+      surved a mission in Boston, Massachusetts speaking Cambodian.
+    </p>
+  </div>
 </body>
 
 </html>

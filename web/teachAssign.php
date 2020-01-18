@@ -22,8 +22,8 @@
 </head>
 
 <body>
-   <h1 class="jumbotron">CS470 | Teach Assignments</h1>
    <?php include("nav.php"); ?>
+   <h1 class="jumbotron">CS470 | Teach Assignments</h1>
    <script src="./scripts/app.js"></script>
 </body>
 
