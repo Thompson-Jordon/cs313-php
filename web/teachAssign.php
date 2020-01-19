@@ -24,6 +24,21 @@
 <body>
    <?php include("nav.php"); ?>
    <h1 class="jumbotron">CS470 | Teach Assignments</h1>
+   <div class="container-fluid">
+      <div class="row">
+         <div class="card col-4 m-2">
+            <img class="card-img-top" src="./images/teach_02.jpg" alt="Card image" style="width:100%">
+            <div class="card-body">
+               <h4 class="card-title">HTML Review</h4>
+               <p class="card-text">A project to review HTML and other front end technologies
+                  like JavaScript and CSS as well as learn new ones i.e. Bootstrap and jQuery.
+               </p>
+               <a href="teach_02.html" class="btn btn-primary">See Project</a>
+            </div>
+         </div>
+
+      </div>
+   </div>
    <script src="./scripts/app.js"></script>
 </body>
 

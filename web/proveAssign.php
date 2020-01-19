@@ -25,6 +25,7 @@
   <?php include("nav.php"); ?>
   <h1 class="jumbotron">CS470 | Prove Assignments</h1>
   <script src="./scripts/app.js"></script>
+  <h2>Coming Soon...</h2>
 </body>
 
 </html>

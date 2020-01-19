@@ -25,13 +25,24 @@
   <?php include("nav.php"); ?>
   <h1 class="jumbotron">CS470 | Jordon Thompson</h1>
   <script src="./scripts/app.js"></script>
-  <div class="container-fluid" id="about">
-    <img src="./images/Jordon2018.jpg" alt="Picture of Jordon">
-    <p>Jordon grew up in Utah and still lives there with his wife and children.
-      Jordon is a member of the Church of Jesus Crist of Latter-Day Saints and
-      surved a mission in Boston, Massachusetts speaking Cambodian.
-    </p>
-  </div>
+  <div class="row container-fluid align-middle" id="about">
+      <div class="col col-5">
+        <img
+          class="img-thumbnail rounded float-left"
+          src="./images/Jordon2018.jpg"
+          alt="Picture of Jordon"
+        />
+      </div>
+      <div class="col my-auto">
+        <p class="rounded text-white bg-primary p-3">
+          Jordon grew up in Utah and still lives there with his wife and
+          children. Jordon is a member of the Church of Jesus Crist of
+          Latter-Day Saints and surved a mission in Boston, Massachusetts
+          speaking Cambodian.<br>He loves playing sports and enjoys programming
+          and development.
+        </p>
+      </div>
+    </div>
 </body>
 
 </html>

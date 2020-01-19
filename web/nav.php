@@ -3,6 +3,5 @@
       <li class="nav-item <?php if ($thisPage == "Home") echo " active"; ?>"><a class="nav-link" href="index.php">CS 470 Home</a></li>
       <li class="nav-item <?php if ($thisPage == "Teach Assignments") echo " active"; ?>"><a class="nav-link" href="teachAssign.php">Teach Assignments</a></li>
       <li class="nav-item <?php if ($thisPage == "Prove Assignments") echo " active"; ?>"><a class="nav-link" href="proveAssign.php">Prove Assignments</a></li>
-      <li class="justify-content-end">Jordon Thompson</li>
    </ul>
 </nav>
