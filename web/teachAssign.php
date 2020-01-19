@@ -33,7 +33,7 @@
                <p class="card-text">A project to review HTML and other front end technologies
                   like JavaScript and CSS as well as learn new ones i.e. Bootstrap and jQuery.
                </p>
-               <a href="teach_02.html" class="btn btn-primary">See Project</a>
+               <a href="teach_02.php" class="btn btn-primary">See Project</a>
             </div>
          </div>
 
