@@ -43,7 +43,7 @@
   <div class="container-fluid">
     <div class="row">
       <!--Assignment-->
-      <div class="card col-xs-12 col-sm-6 col-md-3 m-auto">
+      <div class="card col-xs-12 col-sm-6 col-md-4 m-auto">
         <img class="card-img-top" src="./images/rec.jpg">
         <div class="card-body">
           <h4 class="card-title">CS 371|UX Design</h4>
@@ -54,12 +54,13 @@
         </div>
       </div>
       <!--Assignment-->
-      <div class="card col-xs-12 col-sm-6 col-md-3 m-auto">
+      <div class="card col-xs-12 col-sm-6 col-md-4 m-auto">
         <img class="card-img-top" src="./images/mobileSPA.jpg">
         <div class="card-body">
           <h4 class="card-title">CIT 261|Mobile SPA</h4>
           <p class="card-text">A mobile web app SPA built with JavaScript from 
-            scratch. You may have to resize you browser to simulate a mobile device. 
+            scratch. You may have to resize you browser to simulate a mobile device.
+            It pulls superheroes from a restAPI and allows you to save your favorites. 
           </p>
           <a href="https://thompson-jordon.github.io/cit261/mobileSPA/" class="btn btn-primary">See Project</a>
         </div>
