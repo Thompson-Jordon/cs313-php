@@ -1,3 +1,9 @@
+<?php 
+$majors = ['cs' => 'Computer Science', 
+            'wd' => 'Web Design and Development',
+            'cit' => 'Computer Information Technology',
+            'ce' => 'Computer Engineering']
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,6 +55,14 @@
             placeholder="Enter your comments here"
           ></textarea
           ><br />
+
+          <?php 
+            foreach( $majors as $key => $major ) {
+              ?>
+              <input type="radio" name="major" value="<?php echo $key; ?>" />Computer Science<br />
+              <?php 
+            }
+          ?>
           <label for="radio">Major</label><br>
           <input type="radio" name="major" value="cs" />Computer Science<br />
           <input type="radio" name="major" value="wd" />Web Design and Development<br />
@@ -56,13 +70,13 @@
           <input type="radio" name="major" value="ce" />Computer Engineering<br /><br>
 
           <label for="checkbox">Where have you been?</label><br>
-          <input type="checkbox" name="continents[]" value="North America" id="NA"> I have been to North America<br>
-          <input type="checkbox" name="continents[]" value="South America" id="SA"> I have been to South America<br>
-          <input type="checkbox" name="continents[]" value="Europe" id="E"> I have been to Europe<br>
-          <input type="checkbox" name="continents[]" value="Asia" id="AS"> I have been to Asia<br>
-          <input type="checkbox" name="continents[]" value="Africa" id="AF"> I have been to Africa<br>
-          <input type="checkbox" name="continents[]" value="Australia" id="AU"> I have been to Australia<br>
-          <input type="checkbox" name="continents[]" value="Antarctica" id="AN"> I have been to Antarctica<br>
+          <input type="checkbox" name="continents[]" value="NA"> I have been to North America<br>
+          <input type="checkbox" name="continents[]" value="SA"> I have been to South America<br>
+          <input type="checkbox" name="continents[]" value="EU"> I have been to Europe<br>
+          <input type="checkbox" name="continents[]" value="AS"> I have been to Asia<br>
+          <input type="checkbox" name="continents[]" value="AF"> I have been to Africa<br>
+          <input type="checkbox" name="continents[]" value="AU"> I have been to Australia<br>
+          <input type="checkbox" name="continents[]" value="AN"> I have been to Antarctica<br>
 
           <button type="submit">Submit</button>
         </form>
