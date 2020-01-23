@@ -28,13 +28,24 @@
       <div class="row">
          <!--Assignment-->
          <div class="card col-xs-12 col-sm-6 col-md-3 m-auto">
-            <img class="card-img-top" src="./images/teach_02.jpg" alt="Card image" style="width:100%">
+            <img class="card-img-top" src="./images/teach_02.jpg" alt="Card image">
             <div class="card-body">
                <h4 class="card-title">HTML Review</h4>
                <p class="card-text">A project to review HTML and other front end technologies
                   like JavaScript and CSS as well as learn new ones i.e. Bootstrap and jQuery.
                </p>
                <a href="teach_02.html" class="btn btn-primary">See Project</a>
+            </div>
+         </div>
+         <!--Assignment-->
+         <div class="card col-xs-12 col-sm-6 col-md-3 m-auto">
+            <img class="card-img-top" src="./images/php.jpg" alt="Card image">
+            <div class="card-body">
+               <h4 class="card-title">PHP Form Handler</h4>
+               <p class="card-text">Using PHP to collect form data and print it
+                  on the screen.
+               </p>
+               <a href="teach_03/teach_03.php" class="btn btn-primary">See Project</a>
             </div>
          </div>
 
