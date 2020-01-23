@@ -15,7 +15,9 @@ echo '<p>Continents I have been to: </p>';
 echo '<ul>';
 foreach ( $input_continents as $continent ) {
   if ($array_key_exists($continent, $continents)) {
-    echo '<li>' . $continents[$continent] . '</li>';
+  ?>
+  <li><?php echo $continents[$continent]; ?> </li>
+  <?php
   }
 }
 echo '</ul>';
