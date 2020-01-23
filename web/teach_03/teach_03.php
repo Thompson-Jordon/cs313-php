@@ -44,7 +44,7 @@ $majors = [
         <?php
         foreach ($majors as $key => $major) {
         ?>
-          <input type="radio" name="major" value="<?php echo $key; ?>" /><?php echo $major; ?><br />
+          <input type="radio" name="major" value="<?php echo $major; ?>" /><?php echo $major; ?><br />
         <?php
         }
         ?>
