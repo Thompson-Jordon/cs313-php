@@ -39,7 +39,7 @@
          </div>
          <!--Assignment-->
          <div class="card col-xs-12 col-sm-6 col-md-3 m-auto">
-            <img class="card-img-top" src="./images/php.jpg" alt="Card image">
+            <img class="card-img-top" src="./images/php.png" alt="Card image">
             <div class="card-body">
                <h4 class="card-title">PHP Form Handler</h4>
                <p class="card-text">Using PHP to collect form data and print it
