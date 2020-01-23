@@ -46,7 +46,7 @@
       <div class="card col-xs-12 col-sm-6 col-md-5 m-auto">
         <img class="card-img-top" src="./images/rec.jpg">
         <div class="card-body">
-          <h4 class="card-title">CS 371|UX Design</h4>
+          <h4 class="card-title">CS 371 UX Design</h4>
           <p class="card-text">A website to use the UX Design techniques learned
             Throughout the semester
           </p>
@@ -57,7 +57,7 @@
       <div class="card col-xs-12 col-sm-6 col-md-5 m-auto">
         <img class="card-img-top" src="./images/mobileSPA.jpg">
         <div class="card-body">
-          <h4 class="card-title">CIT 261|Mobile SPA</h4>
+          <h4 class="card-title">CIT 261 Mobile SPA</h4>
           <p class="card-text">A mobile web app SPA built with JavaScript from
             scratch. You may have to resize you browser to simulate a mobile device.
             It pulls superheroes from a restAPI and allows you to save your favorites.
