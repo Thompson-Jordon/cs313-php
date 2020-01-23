@@ -45,7 +45,7 @@
                <p class="card-text">Using PHP to collect form data and print it
                   on the screen.
                </p>
-               <a href="teach_03/teach_03.php" class="btn btn-primary">See Project</a>
+               <a href="teach_03.php" class="btn btn-primary">See Project</a>
             </div>
          </div>
 

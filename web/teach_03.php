@@ -27,7 +27,7 @@ $thisPage = "Teach_03";
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <title>Teach 03: PHP Form Handling</title>
 </head>
-<?php include("../nav.php"); ?>
+<?php include("nav.php"); ?>
 <body>
   <div class="container">
     <div class="row center">
