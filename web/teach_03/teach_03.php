@@ -4,7 +4,8 @@ $majors = [
   'wd' => 'Web Design and Development',
   'cit' => 'Computer Information Technology',
   'ce' => 'Computer Engineering'
-]
+];
+$thisPage = "Teach_03";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +27,7 @@ $majors = [
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <title>Teach 03: PHP Form Handling</title>
 </head>
-
+<?php include("nav.php"); ?>
 <body>
   <div class="container">
     <div class="row center">
