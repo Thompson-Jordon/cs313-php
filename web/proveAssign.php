@@ -24,8 +24,20 @@
 <body>
   <?php include("nav.php"); ?>
   <h1 class="jumbotron">CS470 | Prove Assignments</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <!--Assignment-->
+      <div class="card col-xs-12 col-sm-6 col-md-3 m-auto">
+        <img class="card-img-top" src="./images/shoppingcart.svg" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Shopping Cart</h4>
+          <p class="card-text"></p>
+          <a href="03_browse.php" class="btn btn-primary">See Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="./scripts/app.js"></script>
-  <h2>Coming Soon...</h2>
 </body>
 
 </html>
