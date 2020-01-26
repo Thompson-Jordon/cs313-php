@@ -6,7 +6,7 @@ session_start();
 if (filter_input(INPUT_GET, 'action') == 'delete') {
    foreach ($_SESSION['cart'] as $product) {
       // remove item from cart
-      unset($_SESSION['cart'][$_GET['id']]);
+      unset($_SESSION['cart'][htmlspecialchars($_GET['id'])]);
    }
 }
 ?>
@@ -72,6 +72,7 @@ if (filter_input(INPUT_GET, 'action') == 'delete') {
                <td></td>
                <th>Total:</th>
                <td>$<?php echo number_format($total, 2); ?></td>
+               <td></td>
             </tr>
          </table>
 
