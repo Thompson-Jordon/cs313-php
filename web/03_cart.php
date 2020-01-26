@@ -1,5 +1,5 @@
 <?php
-$thisPage = "";;
+$thisPage = "Prove Assignments";;
 
 session_start();
 
