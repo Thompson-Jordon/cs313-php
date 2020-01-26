@@ -47,7 +47,7 @@ if (filter_input(INPUT_POST, 'add_item')) {
 <body>
    <?php include("nav.php"); ?>
    <div class="jumbotron jumbotron-fluid">
-      <a type="button" class="btn btn-primary btn-lg float-right mr-3" href="03_cart.php">View Cart <span class="badge badge-light">
+      <a type="button" class="btn btn-primary float-right mr-3" href="03_cart.php">View Cart <span class="badge badge-light">
             <?php
             $totalCount = 0;
             foreach ($_SESSION['cart'] as $product) {
