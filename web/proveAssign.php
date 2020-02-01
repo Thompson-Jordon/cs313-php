@@ -31,10 +31,23 @@
         <img class="card-img-top" src="./images/shoppingcart.svg" alt="Card image">
         <div class="card-body">
           <h4 class="card-title">Shopping Cart</h4>
-          <p class="card-text"></p>
+          <p class="card-text">This project is a simple ecomerce site that allows you to
+            add drinks to your cart and then complete the order.
+          </p>
           <a href="03_browse.php" class="btn btn-primary">See Project</a>
         </div>
       </div>
+      <!-- END-->
+      <!--Assignment-->
+      <div class="card col-xs-12 col-sm-6 col-md-3 m-auto">
+        <img class="card-img-top" src="./images/databaseERD.jpg" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Database Design</h4>
+          <p class="card-text">This page contains the database ERD and sql.</p>
+          <a href="04_prove.php" class="btn btn-primary">See Project</a>
+        </div>
+      </div>
+      <!-- END-->
     </div>
   </div>
   <script src="./scripts/app.js"></script>
