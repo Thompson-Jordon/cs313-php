@@ -1,40 +1,39 @@
 <?php
-// try
-// {
-//    $user = 'postgres';
-//    $password = 'Subbay89';
-//    $db = new PDO('pgsql:host=localhost;dbname=myTestDB', $user, $password);
-// 
-//    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// }
-// catch (PDOException $ex)
-// {
-//    echo 'Error: ' . $ex->getMessage();
-//    die();
-// }
-// 
-// 
-// echo $db;
-try 
-{
-   $dbURL = getenv('DATABASE_URL');
+require('connectDB.php');
 
-   $dbOpts = parse_url($dbUrl);
+$db = get_db();
 
-   $dbHost = $dbOpts["host"];
-   $dbPort = $dbOpts["port"];
-   $dbUser = $dbOpts["user"];
-   $dbPassword = $dbOpts["pass"];
-   $dbName = ltrim($dbOpts["path"],'/');
- 
-   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
- 
-   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- }
- catch (PDOException $ex)
- {
-   echo 'Error!: ' . $ex->getMessage();
-   die();
- }
-
+$query = 'SELECT id, userid, content FROM note';
+$stmt = $db->prepare($query);
+$stmt->execute();
+$notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Practice connect DB</title>
+</head>
+
+<body>
+   <h1>Notes</h1>
+   <ul>
+      <?php
+      foreach ($notes as $note) {
+         $id = $note['id'];
+         $user = $note['userid'];
+         $content = $note['content'];
+         echo "<li>
+         <p>" . $id . " " . $user . " " . $content . "</p></li>";
+      } ?>
+   </ul>
+
+   <?php
+   foreach ($db->query('SELECT username, password FROM note_user') as $row) {
+      echo 'user: ' . $row['username'];
+      echo ' password: ' . $row['password'];
+      echo '</br>';
+   } ?>
+</body>
+
+</html>
