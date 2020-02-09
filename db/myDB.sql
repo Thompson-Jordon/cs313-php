@@ -42,6 +42,7 @@ CREATE TABLE public.workorder
          id SERIAL NOT NULL PRIMARY KEY,
          start_date DATE NOT NULL,
          end_date DATE,
+         priority INTEGER NOT NULL,
          description TEXT,
          notes TEXT,
          device_id INTEGER NOT NULL REFERENCES public.device(id),
@@ -68,8 +69,9 @@ INSERT INTO public.device_type (id, name) VALUES ('TNK_SNS', 'Tank Sensor');
 
 -- Device --
 INSERT INTO public.device (name, device_id, is_sched, frequency, type_id, location_id) VALUES ('Sales', 'S123456789', TRUE, 182, 'GAS_MTR', 1);
+INSERT INTO public.device (name, device_id, is_sched, frequency, type_id, location_id) VALUES ('Oil Tank 1', '1000000001', FALSE, 0, 'TNK_SNS', 1);
 INSERT INTO public.device (name, device_id, is_sched, frequency, type_id, location_id) VALUES ('Oil Tank 1', '1000088899', FALSE, 182, 'TNK_SNS', 2);
 
 -- Workorder --
-INSERT INTO public.workorder (start_date, description, device_id, user_id) VALUES (NOW(), 'Calibrate Meter', 1, 1);
-INSERT INTO public.workorder (start_date, description, device_id, user_id) VALUES (NOW(), 'Check high temp on Tank sensor', 2, 2);
+INSERT INTO public.workorder (start_date, priority, description, device_id, user_id) VALUES (NOW(), 1, 'Calibrate Meter', 1, 1);
+INSERT INTO public.workorder (start_date, priority, description, device_id, user_id) VALUES (NOW(), 2, 'Check high temp on Tank sensor', 2, 2);

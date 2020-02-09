@@ -48,6 +48,18 @@
         </div>
       </div>
       <!-- END-->
+      <!--Assignment-->
+      <div class="card col-xs-12 col-sm-6 col-md-3 m-auto">
+        <img class="card-img-top" src="./images/workorder.jpg" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Word Order Week05</h4>
+          <p class="card-text">This week I built a few pages to give the initial structure
+            of the work order program.
+          </p>
+          <a href="prove05/workorder.php" class="btn btn-primary">See Project</a>
+        </div>
+      </div>
+      <!-- END-->
     </div>
   </div>
   <script src="./scripts/app.js"></script>
