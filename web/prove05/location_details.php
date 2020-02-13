@@ -21,7 +21,7 @@ $area = $data['area'];
 $stmt2 = $db->prepare('SELECT d.name AS device_name, d.device_id as device_id, t.name AS type  FROM ((device d INNER JOIN location l ON d.location_id = l.id) INNER JOIN device_type t ON d.type_id = t.id) WHERE d.location_id=:id');
 $stmt2->bindValue(':id', $location_id, PDO::PARAM_INT);
 $stmt2->execute();
-$devices = $stmt2->fetch(PDO::FETCH_ASSOC);
+$devices = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,6 @@ $devices = $stmt2->fetch(PDO::FETCH_ASSOC);
                <th>Device Type</th>
             </tr>
             <?php
-            var_dump($devices);
             foreach ($devices as $next) {
                $device_name = $next['device_name'];
                $device_id = $next['device_id'];
