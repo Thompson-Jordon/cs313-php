@@ -15,7 +15,11 @@ $db = get_db();
 <body>
    <?php require("nav.php"); ?>
 
-   <h1>Enter Workorder Details</h1>
+   <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+         <h1 class="display-3">Enter New Work Order</h1>
+      </div>
+   </div>
 
    <form id="workorderForm" action="insert_wo.php" method="post">
       <div class="container">

@@ -14,7 +14,11 @@ $db = get_db();
 <body>
    <?php require("nav.php"); ?>
 
-   <h1>Enter Location Details</h1>
+   <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+         <h1 class="display-3">Enter New location</h1>
+      </div>
+   </div>
 
    <form id="locationForm" action="insert_location.php" method="post">
       <div class="container">
@@ -44,7 +48,7 @@ $db = get_db();
                }
                ?>
             </select>
-         </div>         
+         </div>
          <button type="submit" class="btn btn-primary">Submit</button>
       </div>
    </form>
