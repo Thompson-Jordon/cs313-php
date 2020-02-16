@@ -26,6 +26,7 @@ $db = get_db();
          <div class="form-group">
             <label for="location">Location:</label>
             <select type="text" id="location" name="location" class="form-control">
+               <option value="NULL">Select a location</option>
                <?php
                try {
                   $stmt = $db->prepare("SELECT id, name FROM location");

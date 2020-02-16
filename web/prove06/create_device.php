@@ -27,6 +27,7 @@ $location_id = htmlspecialchars($_GET["id"]);
          <div class="form-group">
             <label for="type">Device Type:</label>
             <select type="text" id="type" name="type" class="form-control">
+               <option value="NULL">Select a device type</option>
                <?php
                try {
                   $stmt = $db->prepare("SELECT id, name FROM device_type");

@@ -29,6 +29,7 @@ $db = get_db();
          <div class="form-group">
             <label for="area">Area:</label>
             <select type="text" id="area" name="area" class="form-control">
+               <option value="NULL">Select an Area</option>
                <?php
                try {
                   $stmt = $db->prepare("SELECT id, name FROM area");
