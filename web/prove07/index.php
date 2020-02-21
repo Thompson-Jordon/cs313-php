@@ -9,6 +9,7 @@ if (isset($_POST['logout'])) {
 // If already logged in go to wo page
 if (isset($_SESSION['logged_in']) && $_SESSION = ['logged_in'] == true && !isset($_POST['logout'])) {
    header("Location: workorder.php");
+   die();
 }
 
 // get database
@@ -18,29 +19,29 @@ $db = get_db();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    if (isset($_POST['login'])) {
       //set variables
+
       $username = htmlspecialchars($_POST['username']);
       $password = htmlspecialchars($_POST['password']);
-      // try {
-      //    $stmt = $db->prepare("SELECT * FROM account WHERE username=:username AND password=:password");
-      //    $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-      //    $stmt->bindValue(':password', $password, PDO::PARAM_STR);
-      //    $stmt->execute();
-      // } catch (PDOException $ex) {
-      //    echo "Error with DB. Details: $ex";
-      //    die();
-      // }
-      $qry = "SELECT id, username, password, display_name FROM account WHERE username='$username' AND password='$password'";
-      $result = $db->query($qry);
-      
-      if ($result->rowCount() == 0) { // User doesn't exist
-         // CREATE AN ERROR MESSAGE
-         $message = "Username or password is incorrect!";
-         echo "<script type='text/javascript'>alert('$message');</script>";
-      } else { // User exists
-         $user = $result->fetchAll();
+
+      try {
+         $stmt = $db->prepare("SELECT id, username, password, first_name, last_name FROM account WHERE username=:username");
+         $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+         $stmt->execute();
+         // $qry = "SELECT id, username, password, display_name FROM account WHERE username='$username'";
+         // $result = $db->query($qry);
+         echo "<script type='text/javascript'>alert(" . $stmt->rowCount() . ");</script>";
+
+         if ($stmt->rowCount() == 0 && !password_verify($password, $user['password'])) { // User doesn't exist
+            // CREATE AN ERROR MESSAGE
+            $message = "Username or password is incorrect!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+         } else { // User exists
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            
             // Set session vars
             $_SESSION['username'] = $user['username'];
-            $_SESSION['display_name'] = $user['display_name'];
+            $_SESSION['first_name'] = $user['first_name'];
+            $_SESSION['last_name'] = $user['last_name'];
             $_SESSION['user_id'] = $user['id'];
 
             // set state to logged_in
@@ -48,6 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // go to workorder page
             header("Location: workorder.php");
+         }
+      } catch (PDOException $ex) {
+         echo "Error with DB. Details: $ex";
+         die();
       }
    }
 }
@@ -79,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <div class="form-group">
                      <!-- <label for="remember-me" class="text-info"><span>Remember me</span> 
                         <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br> -->
-                     <input type="submit" name="login" class="btn btn-info btn-md" value="submit">
+                     <input type="submit" name="login" class="btn btn-info btn-md" value="Login">
                   </div>
                   <!-- <div id="register-link" class="text-right">
                                 <a href="#" class="text-info">Register here</a>

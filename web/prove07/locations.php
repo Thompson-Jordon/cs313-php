@@ -5,7 +5,7 @@ $thisPage = "Locations";
 require("connectdb.php");
 $db = get_db();
 // Get locations data
-$locations = $db->prepare("SELECT l.id AS id, l.name AS location, a.name AS area FROM location l INNER JOIN area a ON l.area_id = a.id");
+$locations = $db->prepare("SELECT l.id AS id, l.name AS location, a.name AS area FROM location l INNER JOIN area a ON l.area_id = a.id ORDER BY l.name ASC");
 $locations->execute();
 ?>
 
@@ -28,10 +28,10 @@ $locations->execute();
          </p>
       </div>
    </div>
-   <table class="table table-striped table-hover">
+   <table id="myTable" class="table table-striped table-hover table-sm">
       <tr>
-         <th>Location</th>
-         <th>Area</th>
+         <th onclick="sortTable(0)">Location</th>
+         <th onclick="sortTable(1)">Area</th>
       </tr>
       <?php
       foreach ($locations as $row) {

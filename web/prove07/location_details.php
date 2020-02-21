@@ -32,41 +32,41 @@ $devices = $stmt2->fetchAll(PDO::FETCH_ASSOC);
    <title>Work Order Details</title>
 </head>
 
-<body>
+<body class="bg-secondary">
    <?php require("nav.php"); ?>
-   <div class="jumbotron jumbotron-fluid">
-      <div class="container">
+   <div class="jumbotron jumbotron-fluid bg-secondary">
+      <div class="container border-secondary rounded bg-light">
          <h1 class="display-3"><?php echo $location; ?><echo>
          </h1>
-         <h3><?php echo $area; ?></h3>
+         <h4><?php echo $area; ?></h4>
          <hr class="my-2">
          <p class="lead">
             <a class="btn btn-info btn-lg" href="create_device.php?id=<?php echo $location_id; ?>" role="button">Add Device</a>
          </p>
-      </div>
-      <div class="container">
-         <h5>Devices:</h5>
-         <table class="table table-striped table-hover">
-            <tr>
-               <th>Name</th>
-               <th>Device ID</th>
-               <th>Device Type</th>
-            </tr>
-            <?php
-            foreach ($devices as $next) {
-               $device_name = $next['device_name'];
-               $device_id = $next['device_id'];
-               $type = $next['type'];
-            ?>
+         <div class="container pb-2">
+            <h5>Devices:</h5>
+            <table id="myTable" class="table table-striped table-hover table-sm">
                <tr>
-                  <td><?php echo $device_name; ?></td>
-                  <td><?php echo $device_id; ?></td>
-                  <td><?php echo $type; ?></td>
+                  <th onclick="sortTable(0)">Name</th>
+                  <th onclick="sortTable(1)">Device ID</th>
+                  <th onclick="sortTable(2)">Device Type</th>
                </tr>
-            <?php
-            }
-            ?>
-         </table>
+               <?php
+               foreach ($devices as $next) {
+                  $device_name = $next['device_name'];
+                  $device_id = $next['device_id'];
+                  $type = $next['type'];
+               ?>
+                  <tr>
+                     <td><?php echo $device_name; ?></td>
+                     <td><?php echo $device_id; ?></td>
+                     <td><?php echo $type; ?></td>
+                  </tr>
+               <?php
+               }
+               ?>
+            </table>
+         </div>
       </div>
    </div>
 </body>

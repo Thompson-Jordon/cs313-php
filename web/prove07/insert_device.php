@@ -11,6 +11,19 @@
    require("connectdb.php");
    $db = get_db();
 
+   // create device id if it was null
+   if($device_id == "") {
+      $temp = $db->query("SELECT id FROM device ORDER BY id DESC LIMIT 1");
+      $result = $temp->fetch(PDO::FETCH_ASSOC);
+      $next = $result['id'] + 1;
+      $count = 10 - strlen($next);
+      while($count > 0) {
+         $count--;
+         $device_id .= 0;
+      }
+      $device_id .= $next;
+   }
+
    try {
    // make prepared statment
    $stmt = $db->prepare('INSERT INTO device (name, device_id, is_sched, frequency, type_id, location_id) VALUES (:name, :device_id, :is_sched, :frequency, :type, :location)');

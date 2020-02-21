@@ -49,24 +49,51 @@ $db = get_db();
          </div>
          <div class="form-group">
             <label for="device">Device:</label>
-            <input type="text" id="device" name="device" class="form-control">
+            <select type="text" id="device" name="device" class="form-control">
+               <option value="NULL">Select a location first</option>
+            </select>
          </div>
          <div class="form-group">
             <label for="user">Assign to:</label>
-            <input type="text" id="user" name="user" class="form-control">
+            <select type="text" id="user" name="user" class="form-control">
+               <option value="NULL">Select a User</option>
+               <?php
+               try {
+                  $userstmt = $db->prepare("SELECT id, first_name, last_name FROM account");
+                  $userstmt->execute();
+                  $users = $userstmt->fetchAll(PDO::FETCH_ASSOC);
+
+                  foreach ($users as $user) {
+                     $id = $user['id'];
+                     $fname = $user['first_name'];
+                     $lname = $user['last_name'];
+               ?>
+                     <option value="<?php echo $id; ?>"><?php echo $fname. " " . $lname; ?></option>
+               <?php
+                  }
+               } catch (PDOException $ex) {
+                  echo "Exception Error: $ex";
+                  die();
+               }
+               ?>
+            </select>
          </div>
          <div class="form-group">
             <label for="description">Description:</label>
             <input type="text" id="description" name="description" class="form-control">
          </div>
          <div class="form-group">
-            <label for="priority">Priority:(1-3)</label>
-            <input type="text" id="priority" name="priority" class="form-control">
+            <label for="priority">Priority:</label>
+            <select type="text" id="priority" name="priority" class="form-control">
+               <option value="1">1 - High</option>
+               <option value="2">2 - Medium</option>
+               <option value="3">3 - Low</option>
+            </select>
          </div>
          <button type="submit" class="btn btn-info">Submit</button>
       </div>
    </form>
-   <script src="app.js"></script>
+   <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>

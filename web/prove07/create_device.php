@@ -59,8 +59,8 @@ $location_id = htmlspecialchars($_GET["id"]);
          <div class="form-group">
             <label for="is_sched">Sheduled?</label>
             <select type="text" id="is_sched" name="is_sched" class="form-control">
-               <option value="True">Yes</option>
                <option value="False">No</option>
+               <option value="True">Yes</option>
             </select>
          </div>
          <div class="form-group">
