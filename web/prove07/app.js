@@ -14,9 +14,6 @@ jQuery(document).ready(function() {
   });
 });
 
-// verification for workorder input
-$("#submit_wo").attr("disabled", "disabled");
-
 // function for search filter
 $(document).ready(function() {
   $("#myInput").on("keyup", function() {

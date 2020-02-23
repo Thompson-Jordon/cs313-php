@@ -55,8 +55,8 @@ $db = get_db();
          </div>
          <div class="form-group">
             <label for="user">Assign to:</label>
-            <select type="text" id="user" name="user" class="form-control">
-               <option value="NULL">Select a User</option>
+            <select type="text" id="user" name="user" class="form-control" required>
+               <option value="">Select a User</option>
                <?php
                try {
                   $userstmt = $db->prepare("SELECT id, first_name, last_name FROM account");

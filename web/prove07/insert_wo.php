@@ -11,21 +11,8 @@
    $db = get_db();
 
    try {
-   // get device id
-   // $deviceStmt = $db->prepare('SELECT d.id as device_id FROM device d INNER JOIN location l ON d.location_id = l.id WHERE l.id=:location AND d.name=:device');
-   // $deviceStmt->bindValue(':location', $locationID, PDO::PARAM_STR);
-   // $deviceStmt->bindValue(':device', $device, PDO::PARAM_STR);
-   // $deviceStmt->execute();
-   // $deviceID = $deviceStmt->fetch(PDO::FETCH_ASSOC);
-
-   // get device id
-   // $userStmt = $db->prepare('SELECT id FROM account WHERE display_name=:user');
-   // $userStmt->bindValue(':user', $user, PDO::PARAM_STR);
-   // $userStmt->execute();
-   // $userID = $userStmt->fetch(PDO::FETCH_ASSOC);
-
    // make prepared statment
-   $wo_stmt = $db->prepare('INSERT INTO workorder (start_date, device_id, user_id, description, priority) VALUES (CURRENT_DATE, :device_id, :user_id, :description, :priority)');
+   $wo_stmt = $db->prepare('INSERT INTO workorder (start_date, device_id, user_id, description, priority, reoccurring) VALUES (CURRENT_DATE, :device_id, :user_id, :description, :priority, false)');
    $wo_stmt->bindValue(':device_id', $deviceID, PDO::PARAM_INT);
    $wo_stmt->bindValue(':user_id', $userID, PDO::PARAM_INT);
    $wo_stmt->bindValue(':description', $description, PDO::PARAM_STR);
