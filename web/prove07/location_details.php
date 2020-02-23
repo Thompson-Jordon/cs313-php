@@ -45,7 +45,7 @@ $devices = $stmt2->fetchAll(PDO::FETCH_ASSOC);
          </p>
          <div class="container pb-2">
             <h5>Devices:</h5>
-            <table id="myTable" class="table table-striped table-hover table-sm">
+            <table id="myTable" class="table table-striped table-sm">
                <tr>
                   <th onclick="sortTable(0)">Name</th>
                   <th onclick="sortTable(1)">Device ID</th>

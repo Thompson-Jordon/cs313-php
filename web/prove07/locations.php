@@ -17,36 +17,39 @@ $locations->execute();
    <title>Work Order System</title>
 </head>
 
-<body>
+<body class="bg-secondary">
    <?php require("nav.php"); ?>
-   <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-         <h1 class="display-3">Locations</h1>
-         <hr class="my-2">
-         <p class="lead">
-            <a class="btn btn-info btn-lg" href="create_location.php" role="button">Add Location</a>
-         </p>
+   <div class="jumbotron jumbotron-fluid bg-secondary">
+      <div class="container form-inline border-secondary rounded bg-light py-3">
+            <a class="btn btn-info btn-lg form-control mb-3" href="create_location.php" role="button">Add Location</a>
+            <input class="form-control mb-2 ml-auto" id="myInput" type="text" placeholder="Search..">
+         <div class="container">
+            <table id="myTable" class="table table-striped table-hover table-sm">
+               <thead>
+                  <tr>
+                     <th onclick="sortTable(0)">Location</th>
+                     <th onclick="sortTable(1)">Area</th>
+                  </tr>
+               </thead>
+               <tbody id="tableBody">
+                  <?php
+                  foreach ($locations as $row) {
+                     $id = $row['id'];
+                     $location = $row['location'];
+                     $area = $row['area'];
+                  ?>
+                     <tr class="clickable-row" data-href="location_details.php?id=<?php echo $id; ?>">
+                        <td><?php echo $location; ?></td>
+                        <td><?php echo $area; ?></td>
+                     </tr>
+                  <?php
+                  }
+                  ?>
+               </tbody>
+            </table>
+         </div>
       </div>
    </div>
-   <table id="myTable" class="table table-striped table-hover table-sm">
-      <tr>
-         <th onclick="sortTable(0)">Location</th>
-         <th onclick="sortTable(1)">Area</th>
-      </tr>
-      <?php
-      foreach ($locations as $row) {
-         $id = $row['id'];
-         $location = $row['location'];
-         $area = $row['area'];
-      ?>
-         <tr class="clickable-row" data-href="location_details.php?id=<?php echo $id; ?>">
-            <td><?php echo $location; ?></td>
-            <td><?php echo $area; ?></td>
-         </tr>
-      <?php
-      }
-      ?>
-   </table>
    <script src="app.js"></script>
 </body>
 

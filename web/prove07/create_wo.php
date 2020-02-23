@@ -25,8 +25,8 @@ $db = get_db();
       <div class="container">
          <div class="form-group">
             <label for="location">Location:</label>
-            <select type="text" id="location" name="location" class="form-control">
-               <option value="NULL">Select a location</option>
+            <select type="text" id="location" name="location" class="form-control" required>
+               <option value="" disabled selected>Select a location</option>
                <?php
                try {
                   $stmt = $db->prepare("SELECT id, name FROM location");
@@ -49,8 +49,8 @@ $db = get_db();
          </div>
          <div class="form-group">
             <label for="device">Device:</label>
-            <select type="text" id="device" name="device" class="form-control">
-               <option value="NULL">Select a location first</option>
+            <select type="text" id="device" name="device" class="form-control" required>
+               <option value="" disabled selected>Select a location first</option>
             </select>
          </div>
          <div class="form-group">
@@ -90,7 +90,7 @@ $db = get_db();
                <option value="3">3 - Low</option>
             </select>
          </div>
-         <button type="submit" class="btn btn-info">Submit</button>
+         <button type="submit" id="submit_wo" class="btn btn-info">Submit</button>
       </div>
    </form>
    <script type="text/javascript" src="app.js"></script>

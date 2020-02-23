@@ -24,12 +24,12 @@ $db = get_db();
       <div class="container">
          <div class="form-group">
             <label for="location">Location:</label>
-            <input type="text" name="location" class="form-control">
+            <input type="text" name="location" class="form-control" required>
          </div>
          <div class="form-group">
             <label for="area">Area:</label>
-            <select type="text" id="area" name="area" class="form-control">
-               <option value="NULL">Select an Area</option>
+            <select type="text" id="area" name="area" class="form-control" required>
+               <option value="">Select an Area</option>
                <?php
                try {
                   $stmt = $db->prepare("SELECT id, name FROM area");

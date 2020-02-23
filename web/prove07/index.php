@@ -24,12 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $password = htmlspecialchars($_POST['password']);
 
       try {
-         $stmt = $db->prepare("SELECT id, username, password, first_name, last_name FROM account WHERE username=:username");
+         $stmt = $db->prepare("SELECT id, username, password, first_name, last_name, is_admin FROM account WHERE username=:username");
          $stmt->bindValue(':username', $username, PDO::PARAM_STR);
          $stmt->execute();
-         // $qry = "SELECT id, username, password, display_name FROM account WHERE username='$username'";
-         // $result = $db->query($qry);
-         echo "<script type='text/javascript'>alert(" . $stmt->rowCount() . ");</script>";
 
          if ($stmt->rowCount() == 0 && !password_verify($password, $user['password'])) { // User doesn't exist
             // CREATE AN ERROR MESSAGE
@@ -37,12 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<script type='text/javascript'>alert('$message');</script>";
          } else { // User exists
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            
+
             // Set session vars
             $_SESSION['username'] = $user['username'];
             $_SESSION['first_name'] = $user['first_name'];
             $_SESSION['last_name'] = $user['last_name'];
             $_SESSION['user_id'] = $user['id'];
+            $_SESSION['is_admin'] = $user['is_admin'];
 
             // set state to logged_in
             $_SESSION['logged_in'] = true;
@@ -72,23 +70,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
          <div id="login-column" class="col-md-6">
             <div id="login-box" class="col-md-12">
                <form id="login-form" class="form" action="index.php" method="post">
-                  <h3 class="text-center text-info">Login</h3>
+                  <h3 class="text-center text-info">Work Order Login</h3>
                   <div class="form-group">
                      <label for="username" class="text-info">Username:</label><br>
-                     <input type="text" name="username" id="username" class="form-control">
+                     <input type="text" name="username" id="username" class="form-control" required>
                   </div>
                   <div class="form-group">
                      <label for="password" class="text-info">Password:</label><br>
-                     <input type="password" name="password" id="password" class="form-control">
+                     <input type="password" name="password" id="password" class="form-control" required>
+                  </div>
+                  <div id="register-link" class="text-right">
+                     <a href="sign_up.php" class="text-info">Register here</a>
                   </div>
                   <div class="form-group">
-                     <!-- <label for="remember-me" class="text-info"><span>Remember me</span> 
-                        <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br> -->
                      <input type="submit" name="login" class="btn btn-info btn-md" value="Login">
                   </div>
-                  <!-- <div id="register-link" class="text-right">
-                                <a href="#" class="text-info">Register here</a>
-                            </div> -->
                </form>
             </div>
          </div>
