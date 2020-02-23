@@ -27,14 +27,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
          $stmt = $db->prepare("SELECT id, username, password, first_name, last_name, is_admin FROM account WHERE username=:username");
          $stmt->bindValue(':username', $username, PDO::PARAM_STR);
          $stmt->execute();
+         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-         if ($stmt->rowCount() == 0 && !password_verify($password, $user['password'])) { // User doesn't exist
+         if ($stmt->rowCount() == 0 || !password_verify($password, $user['password'])) { // User doesn't exist
             // CREATE AN ERROR MESSAGE
             $message = "Username or password is incorrect!";
             echo "<script type='text/javascript'>alert('$message');</script>";
+            header("Location: index.php");
+            die();
          } else { // User exists
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
             // Set session vars
             $_SESSION['username'] = $user['username'];
             $_SESSION['first_name'] = $user['first_name'];
